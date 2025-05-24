@@ -1,15 +1,69 @@
 # Predicting Film Popularity and Resampling Techniques for Rare Target Values
 
-W pierwszym pliku: **01_data_preprocessing**, zrobiłam jakieś basic operacje data preprocessing i wybrałam wstępnie cechy, które możemy analizować (wydają się najbardziej sensowne).
+This project investigates the impact of resampling techniques and discretization of regression outputs on model performance in predicting movie popularity.
 
-Później data frame jest przekazywany do drugiego pliku: **02_experiment_goal**, i tam ogólnie miało być tylko to:
-![image](https://github.com/user-attachments/assets/77576cd9-8724-44f1-a990-cf7609accbbe)
 
-Ale potem byłoby ciężko przenosić te df, tworzyć zbiory testowe i treningowe, żeby trenować modele, bo nie importuje się tak łatwo struktur z jednego notebooka do drugiego. Więc ostatecznie wszystko zostawiłam w tym pliku.
+## Dataset
 
-W tym fragmencie:
+| **Attribute**   | **Description**                                                      |
+|-----------------|----------------------------------------------------------------------|
+| Instances       | 4,803 movies                                                         |
+| Features        | 24 columns including title, budget, genres, release date, revenue, popularity, etc. |
+| Target Variable | Popularity (continuous), optionally discretized for classification   |
+| Data Types      | Numerical (e.g., budget), Categorical (e.g., genres), Textual (e.g., overview) |
+| Languages       | Mostly English (94%), with several other languages                   |
+| Source          | Kaggle (public domain), based on TMDB data                           |
+| Link to dataset | https://www.kaggle.com/datasets/utkarshx27/movies-dataset                                                                     |
 
-<img width="511" alt="image" src="https://github.com/user-attachments/assets/0ce84a39-16a2-447d-88e7-6dc3c4d2247c" />
 
-To tego zaznaczonego kodu nie musiałoby być, ale jak się nie zresetuje tych indeksów, to wywala błąd - nie wiem dlaczego do końca, coś mi może umknęło właśnie przez przekazywanie danych między tymi modułami 
-(albo są jakieś problemy z wartoścami nienumeryczniemi - może z *orginal_language* feature). Już nie mam trochę siły tego sprawdzać.
+
+## **Notebooks**
+
+| Notebook Name                                     | Description                                                                                                  |
+|--------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `01_data_preprocessing.ipynb`                    | Cleaning, feature engineering, visualizations, discretization.                                               |
+| `02a_classification_no_resample.ipynb`           | Classification models without resampling.                                                                    |
+| `02b_classification_simple_resample.ipynb`       | Classification models with RandomOverSampler.                                                                |
+| `03a_regression_no_resample.ipynb`               | Regression models without resampling.                                                                        |
+| `03b_regression_simple_resample.ipynb`           | Regression models with RandomOverSampler.                                                                    |
+| `04a_results_influance_of_simple_resampling.ipynb` | Statistical comparison of models with/without resampling.                                                    |
+| `04b_results_classification_vs_regression.ipynb` | Comparison of regression (discretized) vs classification models for data with and without simple resampling. |
+
+## Models Used
+
+- **Classification:**
+  - SVC (Support Vector Classifier)
+  - KNN Classifier
+  - Decision Tree Classifier
+  - MLP Classifier
+
+- **Regression:**
+  - SVR (Support Vector Regressor)
+  - KNN Regressor
+  - Decision Tree Regressor
+  - MLP Regressor
+
+---
+
+## Evaluation Metrics
+
+- **Regression:**
+  - MAE (Mean Absolute Error)
+  - RMSE (Root Mean Squared Error)
+  - R² (Coefficient of Determination)
+
+- **Classification (incl. discretized regression):**
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-score
+
+Additionally, **Wilcoxon Signed-Rank Test** is used for statistical significance testing.
+
+---
+
+## Requirements
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
