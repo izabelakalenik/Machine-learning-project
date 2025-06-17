@@ -1,6 +1,6 @@
-# Predicting Film Popularity and Resampling Techniques for Rare Target Values
+# Predicting Film Popularity and Resampling Techniques for Rare Target Values using classification and regression models
 
-This project investigates the impact of resampling techniques and discretization of regression outputs on model performance in predicting movie popularity.
+This project explores the effectiveness of various machine learning models in predicting movie popularity based on descriptive features such as budget, genres, runtime, and user ratings. It investigates both classification and regression approaches, treating popularity as either a discrete class or a continuous variable. Additionally, the study focuses on the impact of resampling techniques to address data imbalance and the use of discretization of regression outputs, analyzing how these strategies influence model performance.
 
 
 ## Dataset
@@ -29,6 +29,8 @@ This project investigates the impact of resampling techniques and discretization
 | `04a_results_influance_of_simple_resampling.ipynb` | Statistical comparison of models with/without resampling.                                                    |
 | `04b_results_classification_vs_regression.ipynb` | Comparison of regression (discretized) vs classification models for data with and without simple resampling. |
 
+---
+
 ## Models Used
 
 - **Classification:**
@@ -42,8 +44,6 @@ This project investigates the impact of resampling techniques and discretization
   - KNN Regressor
   - Decision Tree Regressor
   - MLP Regressor
-
----
 
 ## Evaluation Metrics
 
@@ -61,6 +61,14 @@ This project investigates the impact of resampling techniques and discretization
 Additionally, **Wilcoxon Signed-Rank Test** is used for statistical significance testing.
 
 ---
+
+## Technologies
+
+- Python (pandas, NumPy, scikit-learn)
+- Jupyter Notebooks
+- Matplotlib & Seaborn for data visualization
+- `imblearn` for resampling techniques
+- **Wilcoxon signed-rank test** for statistical significance testing
 
 ## Requirements
 
