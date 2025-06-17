@@ -1,6 +1,9 @@
 # Predicting Film Popularity and Resampling Techniques for Rare Target Values using classification and regression models
 
-This project explores the effectiveness of various machine learning models in predicting movie popularity based on descriptive features such as budget, genres, runtime, and user ratings. It investigates both classification and regression approaches, treating popularity as either a discrete class or a continuous variable. Additionally, the study focuses on the impact of resampling techniques to address data imbalance and the use of discretization of regression outputs, analyzing how these strategies influence model performance.
+This project was developed as part of a master's level Machine Learning course and was completed by a team of two.
+
+## Overview
+The project explores the effectiveness of various machine learning models in predicting movie popularity based on descriptive features such as budget, genres, runtime, and user ratings. It investigates both classification and regression approaches, treating popularity as either a discrete class or a continuous variable. Additionally, the study focuses on the impact of resampling techniques to address data imbalance and the use of discretization of regression outputs, analyzing how these strategies influence model performance.
 
 
 ## Dataset
